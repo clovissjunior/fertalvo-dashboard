@@ -2,6 +2,10 @@ import pandas as pd
 from dash import Dash, dcc, html, dash_table, Output, Input
 import plotly.graph_objects as go
 
+app = Dash(__name__)
+server = app.server  # <- ESSENCIAL para o Render
+
+
 # Carregar os dados
 df = pd.read_csv("carregamentos.csv", sep=';', decimal=',')
 for col in ['mm_4_75', 'mm_2', 'mm_1', 'fundo', 'peso_massa', 'mm_4_75_perc', 'mm_2_perc', 'mm_1_perc', 'fundo_perc', 'ton']:
@@ -164,4 +168,5 @@ def render_content(tab):
     ], style=layout_style)
 
 if __name__ == '__main__':
-    app.run_server(host='0.0.0.0', port=8050, debug=True)
+    port = int(os.environ.get('PORT', 8050))
+    app.run_server(host='0.0.0.0', port=port, debug=True)
