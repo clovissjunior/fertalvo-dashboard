@@ -24,7 +24,7 @@ coletor_stats = df.groupby('linha')[['mm_4_75', 'mm_2', 'mm_1', 'fundo']].mean()
 app.layout = html.Div([
     html.Div([
         html.Img(src='assets/logo.png', style={'height': '80px', 'marginRight': '20px'}),
-        html.H1("Fertalvo - Análise de Produção - Carregamento", style={'color': '#2c3e50', 'margin': '0', 'paddingTop': '20px'})
+        html.H1("Análise de Produção - Carregamento", style={'color': '#2c3e50', 'margin': '0', 'paddingTop': '20px'})
     ], style={
         'display': 'flex',
         'alignItems': 'center',
