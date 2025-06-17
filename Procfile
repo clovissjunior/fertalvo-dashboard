@@ -1,2 +1,1 @@
-web: gunicorn dashboard_fertalvo:server
-
+web: gunicorn dashboard_plotly:server
