@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: fertalvo-dashboard
+    env: python
+    plan: free
+    buildCommand: ""
+    startCommand: gunicorn dashboard_plotly:server
