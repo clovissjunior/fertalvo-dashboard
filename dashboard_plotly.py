@@ -21,8 +21,6 @@ eficiencia_maquinas = df.groupby('linha')[['mm_2_perc', 'fundo_perc']].mean().re
 fundo_turno = df.groupby('turno')['fundo_perc'].mean().reset_index()
 coletor_stats = df.groupby('linha')[['mm_4_75', 'mm_2', 'mm_1', 'fundo']].mean().reset_index()
 
-app = Dash(__name__)
-
 app.layout = html.Div([
     html.Div([
         html.Img(src='assets/logo.png', style={'height': '80px', 'marginRight': '20px'}),
